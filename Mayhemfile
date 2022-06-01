@@ -1,0 +1,5 @@
+project: rnshah9/miniscript2
+target: miniscript
+
+cmds:
+  - cmd: /repo/MiniScript-cpp/miniscript @@

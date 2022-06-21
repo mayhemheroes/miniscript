@@ -1,4 +1,4 @@
-project: rnshah9/miniscript2
+project: miniscript2
 target: miniscript
 
 cmds:

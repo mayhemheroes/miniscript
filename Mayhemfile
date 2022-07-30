@@ -1,0 +1,5 @@
+project: miniscript2
+target: miniscript
+
+cmds:
+  - cmd: /miniscript @@

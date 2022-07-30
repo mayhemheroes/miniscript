@@ -2,4 +2,4 @@ project: miniscript2
 target: miniscript
 
 cmds:
-  - cmd: /repo/MiniScript-cpp/miniscript @@
+  - cmd: /miniscript @@

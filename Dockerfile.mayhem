@@ -1,11 +1,12 @@
-FROM --platform=linux/amd64 ubuntu:22.04 as builder
+FROM --platform=linux/amd64 ubuntu:22.04 AS builder
 
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential cmake
 
 COPY . /repo
-WORKDIR /repo/MiniScript-cpp
-RUN make -j8
+WORKDIR /repo/build
+RUN cmake .. -DCMAKE_BUILD_TYPE=Release && \
+    cmake --build . -j8
 
-FROM ubuntu:22.04 as package
-COPY --from=builder /repo/MiniScript-cpp/miniscript /
+FROM ubuntu:22.04 AS package
+COPY --from=builder /repo/build/miniscript /
